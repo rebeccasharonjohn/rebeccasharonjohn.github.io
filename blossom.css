@@ -86,11 +86,8 @@
    }
 
   #smiley #star img.star{
-    display: block;
-    float: left;
-    width:250px;
-    margin: 50px  50px 10px;
-    border: 1px solid white;
+   
+    
 }
 
 .star {
