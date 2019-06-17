@@ -106,8 +106,8 @@
     }
 
     @-webkit-keyframes animat_show{
-        0%{opacity:0}
-        100%{opacity:1}
+        0%{opacity:0; transform: translate3d(0, 5%, 0);}
+        100%{opacity:1; transform: translate3d(0, 0, 0);}
     }
 .navbar-dark .navbar-nav .nav-link {
     color: black;
