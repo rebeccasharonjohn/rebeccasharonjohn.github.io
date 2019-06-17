@@ -55,7 +55,7 @@
       height:300px;
     }
     nav {
-      background: transparent;
+      background: grey;
       opacity:0.9;
       height: 100px;
 
@@ -88,7 +88,7 @@
   #smiley #star img.star{
     display: block;
     float: left;
-    width: 300px;
+    width: auto;
     margin: 50px  50px 10px;
     border: 1px solid white;
 }
