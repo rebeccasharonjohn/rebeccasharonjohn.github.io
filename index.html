@@ -9,23 +9,65 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap.min.css">
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
       
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+     
+      <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>  
+    
+      <script>
+      $(document).ready(function(){
+        $('.slider1').bxSlider({
+          slideWidth: 200,
+          minSlides: 1,
+          maxSlides: 4,
+          moveSlides: 1,
+          auto:true,
+          slideMargin: 10
+        });
+      });
+      $(document).ready(function(){
+	    $('.slider2').bxSlider({
+	      slideWidth:1300,
+	     
+	      mode:'fade',
+	      auto: true,
+	       
+	    });
+	  });
+     
+    </script>
     <script src="parallax.js-1.5.0/parallax.js"></script>
+    
+
 
     <title>blossom!</title>
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
     <link rel="stylesheet" type="text/css" href="blossom.css">
+    
   </head>
   <body style="font-family:  'Bree Serif', serif;">
-    
-  <div class="parallax-mirror" data-parallax="scroll" data-image-src="gh1.jpg" 
+  <div></div>
+  	  
+  
+  <div class="parallax-mirror" data-parallax="scroll" data-image-src="wphd2.jpg" 
   style=" background: transparent;">
+   <div class="slider2">
+  	    <div class="slide"><img src="DSCN0034.jpg"></div>
+  	    <div class="slide"><img src="DSCN0033.jpg"></div>
+  	    <div class="slide"><img src="DSCN0043.jpg"></div>
+  	    <div class="slide"><img src="DSCN0049.jpg"></div>
+  	    <div class="slide"><img src="DSCN0632.jpg"></div>
+  	</div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top aninav">
       <a class="navbar-brand" href="#"><img src="icon.png" width="30" height="30"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +77,7 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="blossom.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="plants.html">Plants</a>
@@ -53,91 +95,36 @@
         </form>
       </div>
     </nav>
-    <br><br><br><br>
+    
     <div class="background"><div class="transbox shadow-lg p-3 mb-5">
-       <h2>WELCOME TO BLOSSOM GARDEN CENTER</h2>
+       <h3 class="text-center">WELCOME TO BLOSSOM GARDEN CENTER</h3>
       <p class="text-center"> We stock the largest and most exotic collections of indoor, outdoor, flowering plants and fruit trees. Blossom is a nature lovers paradise – it is an answer to all your gardening and plant needs, a one stop shop for every garden enthusiast.<br><br>
       <button type="button" class="button button1">Know more</button></p>
     </div></div>
-
- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active plants">
-          <div class="slideshow new-arrivals">
-            <div class="card">
-              <img class="card-img-top" src="plant1.jpg" alt="Card image cap">
-              
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="plant2.jpg" alt="Card image cap">
-             
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="plant3.jpg" alt="Card image cap">
-              
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="plant7.jpg" alt="Card image cap">
-             
-            </div>
-          </div>
-      </div>
-      <div class="carousel-item plants">
-        <div class="slideshow new-arrivals">
-          <div class="card">
-            <img class="card-img-top" src="plant2.jpg" alt="Card image cap">
-            
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="plant3.jpg" alt="Card image cap">
-            
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="plant4.jpg" alt="Card image cap">
-            
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="plant8.jpg" alt="Card image cap">
-            
+           <div class="slideshow new-arrivals">
+            <h3>New Arrivals</h3>
+          <div class="slider1">
+           
+            <div class="slide"><img src="plant1.jpg" class="img-thumbnail img-fluid"></div>
+            <div class="slide"><img src="plant2.jpg"  class="img-thumbnail img-fluid"></div>
+            <div class="slide"><img src="plant3.jpg"  class="img-thumbnail img-fluid"></div>
+            <div class="slide"><img src="plant4.jpg" class="img-thumbnail img-fluid"></div>
+            <div class="slide"><img src="plant4.jpg" class="img-thumbnail img-fluid"></div>
+            <div class="slide"><img src="plant5.jpg" class="img-thumbnail img-fluid"></div>
+            <div class="slide"><img src="plant6.jpg" class="img-thumbnail img-fluid"></div>
+            <div class="slide"><img src="plant7.jpg" class="img-thumbnail img-fluid"></div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item plants">
-        <div class="slideshow new-arrivals">
-          <div class="card">
-            <img class="card-img-top" src="plant4.jpg" alt="Card image cap">
-            
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="plant5.jpg" alt="Card image cap">
-            
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="plant6.jpg" alt="Card image cap">
-            
-          </div>
-          <div class="card">
-            <img class="card-img-top" src="plant9.jpg" alt="Card image cap">
-          
-          </div>
-        </div>
-      </div>
+       
+     
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-   </div>
-</div>
+  
+   
+ </div>
+    
+         
+    
+
    
   </body>
 </html>
