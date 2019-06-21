@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Amiri|Gothic+A1|Roboto&display=swap" rel="stylesheet">
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -9,14 +8,79 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="blossom.css">
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-   <script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> 
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+    
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+   
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>  
+  <title></title>
+   <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+   <link rel="stylesheet" type="text/css" href="blossom.css">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+        
+         <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>  
+       
+         <script>
+         $(document).ready(function(){
+           $('.slider1').bxSlider({
+             slideWidth: 200,
+             minSlides: 1,
+             maxSlides: 4,
+             moveSlides: 1,
+             auto:true,
+             slideMargin: 10
+           });
+         });
+         $(document).ready(function(){
+        $('.slider2').bxSlider({
+          slideWidth:1330,
+         
+          mode:'fade',
+          auto: true,
+           
+        });
+      });
+        
+       </script>
+       <script src="parallax.js-1.5.0/parallax.js"></script>
   <script>
+     function showTitle(){
+      var images=document.getElementsByTagName("img");
+      var i=0;
+      while(i<images.length)
+      {
+        var text;
+        var image = images[i];
+        text=image.getAttribute("alt");
+        image.classList.add("img-fluid","img-thumbnail");
+        var title;
+        title=document.createElement("figcaption");
+        var textnode = document.createTextNode(text);         // Create a text node
+        title.appendChild(textnode); 
+        //images[i].insertAdjacentElement("afterend", title);                            // Append the text to <li>
+        //images[i].appendChild(title);  */
+        // `element` is the element you want to wrap
+        var parent = image.parentNode;
+        var wrapper = document.createElement('figure');
+        wrapper.classList.add("imgf");
+
+        // set the wrapper as child (instead of the element)
+        parent.replaceChild(wrapper, image);
+        // set element as child of wrapper
+        wrapper.appendChild(image);
+        wrapper.appendChild(title);
+        i=i+1;
+      }
+     }
       function showImages(el) {
           var windowHeight = jQuery( window ).height();
           $(el).each(function(){
@@ -25,6 +89,8 @@
               var topOfWindow = $(window).scrollTop();
               if (topOfWindow + windowHeight - 200 > thisPos ) {
                   $(this).addClass("fadeIn");
+                  $(this).addClass("img-thumbnail");
+
               }
           });
       }
@@ -32,140 +98,183 @@
       // if the image in the window of browser when the page is loaded, show that image
       $(document).ready(function(){
               showImages('.star');
+              showTitle();
+
       });
 
       // if the image in the window of browser when scrolling the page, show that image
       $(window).scroll(function() {
               showImages('.star');
       });
+
   </script>
+  <style type="text/css">
+     #smiley #star img.star{
+    
+}
+#star{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ 
+ 
+}
+ #smiley #star figure.imgf{
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 40vmin;
+  width: 40vmin;
+}
+figcaption {
+  text-align: center;
+  font-size: 3vmin;
+}
+
+</style>
+
+
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top aninav">
-    <a class="navbar-brand" href="#"><img src="icon.png" width="30" height="30"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+   <div class="parallax-mirror" data-parallax="scroll" data-image-src="bcg1.jpg" 
+   style=" background: transparent;">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top aninav">
+     <a class="navbar-brand" href="#"><img src="icon.png" alt="" width="30" height="30"></a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01" style="background:#7cccb6">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="plants.html">Plants</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="pots.html">Pots</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="tools.html">Gardening tools</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-  <br><br><br>
+     <div class="collapse navbar-collapse" id="navbarColor01">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+           <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="plants.html">Plants</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="pots.html">Pots</a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="tools.html">Gardening tools</a>
+         </li>
+       </ul>
+       <form class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2" type="text" placeholder="Search">
+         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+       </form>
+     </div>
+   </nav>
+   <br><br><br>
+  <div class="slider2">
+       <div class="slide"><img src="plantwp1.jpg" alt=""></div>
+       <div class="slide"><img src="plantwp2.jpg" alt="" ></div>
+       <div class="slide"><img src="plantwp3.jpg" alt=""></div>
+       <div class="slide"><img src="plantwp4.jpg" alt=""></div>
+       <div class="slide"><img src="plantwp5.jpg" alt=""></div>
+       <div class="slide"><img src="plantwp6.jpg" alt=""></div>
+       <div class="slide"><img src="plantwp7.jpg" alt=""></div>
+       <div class="slide"><img src="plantwp8.jpg" alt=""></div>
+   </div>
+  
   <div id="smiley" class="container-fluid">
-          <div id="star" class="plantimages mx-auto d-block">
-              <img src="plant8.jpg" alt="anthurium" class="star img-fluid img-thumbnail">
-              
-             
-              <img src="plant2.jpg" alt="asparagus" class="star img-fluid img-thumbnail ">
+          <div id="star" class="plantimages">
+              <img src="plant1.jpg" alt="adenium" class="star">
             
-              <img src="plant3.jpg" alt="adenium" class="star img-fluid img-thumbnail">
+             
+              <img src="plant2.jpg" alt="pentas" class="star">
+            
+              <img src="plant3.jpg" alt="aglaonema" class="star">
+           
+              <img src="plant4.jpg" alt="aboli crosandra" class="star">
+              <img src="plant5.jpg" alt="aglaonema" class="star">
+              <img src="plant6.jpg" alt="chinese evergreen" class="star">
+              <img src="plant7.jpg" alt="anthurium-white" class="star">
+              <img src="plant8.jpg" alt="anthurium" class="star">
+              <img src="plant9.jpg" alt="basil" class="star">
+              <img src="plant10.jpg" alt="verbena" class="star">
+              <img src="plant11.jpg" alt="aloe vera" class="star">
+              <img src="plant12.jpg" alt="alocasia" class="star">
+              <img src="plant13.jpg" alt="aboli" class="star">
+              <img src="plant14.jpg" alt="carrot" class="star">
+              <img src="plant15.jpg" alt="chilli plant" class="star">
+              <img src="plant16.jpg" alt="bamboo-golden" class="star">
+              <img src="plant17.jpg" alt="brassia" class="star">
+              <img src="plant18.jpg" alt="banana" class="star">
+              <img src="plant19.jpg" alt="bromelia" class="star">
+              <img src="plant20.jpg" alt="begonia" class="star">
+              <img src="plant21.jpg" alt="bougainvillea" class="star">
+              <img src="plant22.jpg" alt="crypanthus" class="star">
+              <img src="plant23.jpg" alt="champa" class="star">
+              <img src="plant24.jpg" alt="croton-lemon" class="star">
+              <img src="plant25.jpg" alt="croton-petra" class="star">
+              <img src="plant26.jpg" alt="coconut" class="star">
+              <img src="plant27.jpg" alt="chlorophytum-g" class="star">
+              <img src="plant28.jpg" alt="chlorophytum-w" class="star">
+              <img src="plant29.jpg" alt="christmas tree" class="star">
+              <img src="plant30.jpg" alt="curry-leaves" class="star">
+              <img src="plant31.jpg" alt="coleus" class="star">
+              <img src="plant32.jpg" alt="cactus" class="star">
+              <img src="plant33.jpg" alt="capsicum" class="star">
+              <img src="plant34.jpg" alt="yellow capsicum" class="star">
+              <img src="plant35.jpg" alt="duranta-gold" class="star">
+              <img src="plant36.jpg" alt="DIEFFENBACHIA MARINA" class="star">
+              <img src="plant37.jpg" alt="EUPHORBIA" class="star">
+              <img src="plant38.jpg" alt="EUPHORBIA MILLI " class="star">
+              <img src="plant39.jpg" alt="EXCOECARIA(Chinese Roton/Jungle Fireplant)" class="star">
+              <img src="plant40.jpg" alt="FURCARIA" class="star">
+              <img src="plant41.jpg" alt="FITTONIA WHITE" class="star">
+              <img src="plant42.jpg" alt="FITTONIA RED" class="star">
+              <img src="plant43.jpg" alt="FERN-BOSTON " class="star">
+              <img src="plant44.jpg" alt="FERN-GOLDEN" class="star">
+              <img src="plant45.jpg" alt="GOOD-LUCK PLANT " class="star">
+              <img src="plant46.jpg" alt="GARDENIA(Anand)" class="star">
+              <img src="plant47.jpg" alt="HIBISCUS-RED" class="star">
+              <img src="plant48.jpg" alt="HELICONIA" class="star">
+              <img src="plant49.jpg" alt="IXORA" class="star">
+              <img src="plant50.jpg" alt="jade" class="star">
+              <img src="plant51.jpg" alt="leea" class="star">
+              <img src="plant52.jpg" alt="MOSS-STICK" class="star">
+              <img src="plant53.jpg" alt="MOGRA" class="star">
+              <img src="plant54.jpg" alt="MUSANDA" class="star">
+              <img src="plant55.jpg" alt="mint" class="star">
+              <img src="plant56.jpg" alt="MAGAI" class="star">
+              <img src="plant57.jpg" alt="(JACK) MONSTERA CREEPER" class="star">
+              <img src="plant58.jpg" alt="NERIUM" class="star">
+              <img src="plant59.jpg" alt="orchid" class="star">
+              <img src="plant60.jpg" alt="orange" class="star">
+              <img src="plant61.jpg" alt="OFFICE TIME" class="star">
+              <img src="plant62.jpg" alt="POINTSETTIA" class="star">
+              <img src="plant63.jpg" alt="PERIWINKLE" class="star">
+              <img src="plant64.jpg" alt="PINEAPPLE" class="star">
+              <img src="plant65.jpg" alt="PALM-ARECA" class="star">
+              <img src="plant66.jpg" alt="PALM-FOXTAI" class="star">
+              <img src="plant67.jpg" alt="PALM-KENTIA" class="star">
+              <img src="plant68.jpg" alt="PALM-LATANIA" class="star">
+              <img src="plant69.jpg" alt="PEPEROMIA" class="star">
+              <img src="plant70.jpg" alt="PALM-TABLE/FAN" class="star">
+              <img src="plant71.jpg" alt="PALM-RAPHIS" class="star">
+              <img src="plant72.jpg" alt="PALM-MANILA" class="star">
+              <img src="plant73.jpg" alt="PALM-MAJESTIC" class="star">
+              <img src="plant74.jpg" alt="ticoma" class="star">
+              <img src="plant75.jpg" alt="PALM-PHOENIX" class="star">
+              <img src="plant76.jpg" alt="POMEGRANATE" class="star">
+              <img src="plant77.jpg" alt="PENDANUS" class="star">
+            
+              <img src="plant79.jpg" alt="RAAT RANI" class="star">
+              <img src="plant80.jpg" alt="RHOEO" class="star">
+              <img src="plant81.jpg" alt="RUSSELIA" class="star">
+              <img src="plant82.jpg" alt="rose" class="star">
+              <img src="plant83.jpg" alt="SCHEFFLERA" class="star">
+              <img src="plant84.jpg" alt="SENSEVIERIA" class="star">
+              <img src="plant85.jpg" alt="SYNGONIUM" class="star">
+              <img src="plant86.jpg" alt="THUJA" class="star">
+              <img src="plant87.jpg" alt="tulsi" class="star">
+              <img src="plant88.jpg" alt="XANADU" class="star">
+               <img src="plant89.jpg" alt="yucca" class="star">
+              <img src="plant90.jpg" alt="CALATHEA - ROSE PAINTED" class="star">
               
-              <img src="plant4.jpg" alt="ajwain" class="star img-fluid img-thumbnail">
-              <img src="plant5.jpg" alt="ashoka" class="star img-fluid img-thumbnail">
-              <img src="plant6.jpg" alt="chinese evergreen" class="star img-fluid img-thumbnail">
-              <img src="plant7.jpg" alt="alpinia" class="star img-fluid img-thumbnail">
-              
-              <img src="plant9.jpg" alt="basil" class="star img-fluid img-thumbnail">
-              <img src="plant10.jpg" alt="almanda creeper" class="star img-fluid img-thumbnail">
-              <img src="pl11.jpg" alt="aloe vera" class="star img-fluid img-thumbnail">
-              <img src="plant12.jpg" alt="adulsa" class="star img-fluid img-thumbnail">
-              <img src="plant13.jpg" alt="aboli" class="star img-fluid img-thumbnail">
-              <img src="plant14.jpg" alt="bamboo black" class="star img-fluid img-thumbnail">
-              <img src="plant15.jpg" alt="bamboo buddha belly" class="star img-fluid img-thumbnail">
-              <img src="plant16.jpg" alt="bamboo-golden" class="star img-fluid img-thumbnail">
-              <img src="plant17.jpg" alt="brassia" class="star img-fluid img-thumbnail">
-              <img src="plant18.jpg" alt="banana" class="star img-fluid img-thumbnail">
-              <img src="plant19.jpg" alt="bromelia" class="star img-fluid img-thumbnail">
-              <img src="plant20.jpg" alt="begonia" class="star img-fluid img-thumbnail">
-              <img src="plant21.jpg" alt="bougainvillea" class="star img-fluid img-thumbnail">
-              <img src="plant22.jpg" alt="crypanthus" class="star img-fluid img-thumbnail">
-              <img src="plant23.jpg" alt="champa" class="star img-fluid img-thumbnail">
-              <img src="plant24.jpg" alt="croton-lemon" class="star img-fluid img-thumbnail">
-              <img src="plant25.jpg" alt="croton-petra" class="star img-fluid img-thumbnail">
-              <img src="plant26.jpg" alt="coconut" class="star img-fluid img-thumbnail">
-              <img src="plant27.jpg" alt="chlorophytum-g" class="star img-fluid img-thumbnail">
-              <img src="plant28.jpg" alt="chlorophytum-w" class="star img-fluid img-thumbnail">
-              <img src="plant29.jpg" alt="christmas tree" class="star img-fluid img-thumbnail">
-              <img src="plant30.jpg" alt="curry-leaves" class="star img-fluid img-thumbnail">
-              <img src="plant31.jpg" alt="coleus" class="star img-fluid img-thumbnail">
-              <img src="plant32.jpg" alt="cactus" class="star img-fluid img-thumbnail">
-              <img src="plant33.jpg" alt="capsicum" class="star img-fluid img-thumbnail">
-              <img src="plant34.jpg" alt="DRACAENA MAHATMA" class="star img-fluid img-thumbnail">
-              <img src="plant35.jpg" alt="DRACAENA GREEN" class="star img-fluid img-thumbnail">
-              <img src="plant36.jpg" alt="DIEFFENBACHIA MARINA" class="star img-fluid img-thumbnail">
-              <img src="plant37.jpg" alt="EUPHORBIA" class="star img-fluid img-thumbnail">
-              <img src="plant38.jpg" alt="EUPHORBIA MILLI " class="star img-fluid img-thumbnail">
-              <img src="plant39.jpg" alt="EXCOECARIA(Chinese Roton/Jungle Fireplant)" class="star img-fluid img-thumbnail">
-              <img src="plant40.jpg" alt="FURCARIA" class="star img-fluid img-thumbnail">
-              <img src="plant41.jpg" alt="FITTONIA WHITE" class="star img-fluid img-thumbnail">
-              <img src="plant42.jpg" alt="FITTONIA RED" class="star img-fluid img-thumbnail">
-              <img src="plant43.jpg" alt="FERN-BOSTON " class="star img-fluid img-thumbnail">
-              <img src="plant44.jpg" alt="FERN-GOLDEN" class="star img-fluid img-thumbnail">
-              <img src="plant45.jpg" alt="GOOD-LUCK PLANT " class="star img-fluid img-thumbnail">
-              <img src="plant46.jpg" alt="GARDENIA(Anand)" class="star img-fluid img-thumbnail">
-              <img src="plant47.jpg" alt="HIBISCUS-RED" class="star img-fluid img-thumbnail">
-              <img src="plant48.jpg" alt="HELICONIA" class="star img-fluid img-thumbnail">
-              <img src="plant49.jpg" alt="IXORA" class="star img-fluid img-thumbnail">
-              <img src="plant50.jpg" alt="jade" class="star img-fluid img-thumbnail">
-              <img src="plant51.jpg" alt="leea" class="star img-fluid img-thumbnail">
-              <img src="plant52.jpg" alt="MOSS-STICK" class="star img-fluid img-thumbnail">
-              <img src="plant53.jpg" alt="MOGRA" class="star img-fluid img-thumbnail">
-              <img src="plant54.jpg" alt="MUSANDA" class="star img-fluid img-thumbnail">
-              <img src="plant55.jpg" alt="mint" class="star img-fluid img-thumbnail">
-              <img src="plant56.jpg" alt="MAGAI" class="star img-fluid img-thumbnail">
-              <img src="plant57.jpg" alt="(JACK) MONSTERA CREEPER" class="star img-fluid img-thumbnail">
-              <img src="plant58.jpg" alt="NERIUM" class="star img-fluid img-thumbnail">
-              <img src="plant59.jpg" alt="orchid" class="star img-fluid img-thumbnail">
-              <img src="plant60.jpg" alt="orange" class="star img-fluid img-thumbnail">
-              <img src="plant61.jpg" alt="OFFICE TIME" class="star img-fluid img-thumbnail">
-              <img src="plant62.jpg" alt="POINTSETTIA" class="star img-fluid img-thumbnail">
-              <img src="plant63.jpg" alt="PERIWINKLE" class="star img-fluid img-thumbnail">
-              <img src="plant64.jpg" alt="PINEAPPLE" class="star img-fluid img-thumbnail">
-              <img src="plant65.jpg" alt="PALM-ARECA" class="star img-fluid img-thumbnail">
-              <img src="plant66.jpg" alt="PALM-FOXTAI" class="star img-fluid img-thumbnail">
-              <img src="plant67.jpg" alt="PALM-KENTIA" class="star img-fluid img-thumbnail">
-              <img src="plant68.jpg" alt="PALM-LATANIA" class="star img-fluid img-thumbnail">
-              <img src="plant69.jpg" alt="PALM-RED" class="star img-fluid img-thumbnail">
-              <img src="plant70.jpg" alt="PALM-TABLE/FAN" class="star img-fluid img-thumbnail">
-              <img src="plant71.jpg" alt="PALM-RAPHIS" class="star img-fluid img-thumbnail">
-              <img src="plant72.jpg" alt="PALM-MANILA" class="star img-fluid img-thumbnail">
-              <img src="plant73.jpg" alt="PALM-MAJESTIC" class="star img-fluid img-thumbnail">
-              <img src="plant74.jpg" alt="PALM-PARLOUR" class="star img-fluid img-thumbnail">
-              <img src="plant75.jpg" alt="PALM-PHOENIX" class="star img-fluid img-thumbnail">
-              <img src="plant76.jpg" alt="POMEGRANATE" class="star img-fluid img-thumbnail">
-              <img src="plant77.jpg" alt="PENDANUS" class="star img-fluid img-thumbnail">
-              <img src="plant78.jpg" alt="PEPEROMIA" class="star img-fluid img-thumbnail">
-              <img src="plant79.jpg" alt="RAAT RANI" class="star img-fluid img-thumbnail">
-              <img src="plant80.jpg" alt="RHOEO" class="star img-fluid img-thumbnail">
-              <img src="plant81.jpg" alt="RUSSELIA" class="star img-fluid img-thumbnail">
-              <img src="plant82.jpg" alt="rose" class="star img-fluid img-thumbnail">
-              <img src="plant83.jpg" alt="SCHEFFLERA" class="star img-fluid img-thumbnail">
-              <img src="plant84.jpg" alt="SENSEVIERIA" class="star img-fluid img-thumbnail">
-              <img src="plant85.jpg" alt="SYNGONIUM" class="star img-fluid img-thumbnail">
-              <img src="plant86.jpg" alt="THUJA" class="star img-fluid img-thumbnail">
-              <img src="plant87.jpg" alt="tulsi" class="star img-fluid img-thumbnail">
-              <img src="plant88.jpg" alt="XANADU" class="star img-fluid img-thumbnail">
-               <img src="plant89.jpg" alt="yucca" class="star img-fluid img-thumbnail">
-              <img src="plant90.jpg" alt="CALATHEA - ROSE PAINTED" class="star img-fluid img-thumbnail">
-              <img src="plant91.jpg" alt="PALM - UMBRELLA" class="star img-fluid img-thumbnail">
           </div>
       </div>
 
