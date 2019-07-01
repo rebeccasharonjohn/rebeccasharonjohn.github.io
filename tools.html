@@ -53,34 +53,7 @@
        </script>
        <script src="parallax.js-1.5.0/parallax.js"></script>
   <script>
-     function showTitle(){
-      var images=document.getElementsByTagName("img");
-      var i=0;
-      while(i<images.length)
-      {
-        var text;
-        var image = images[i];
-        text=image.getAttribute("alt");
-        image.classList.add("img-fluid","img-thumbnail");
-        var title;
-        title=document.createElement("figcaption");
-        var textnode = document.createTextNode(text);         // Create a text node
-        title.appendChild(textnode); 
-        //images[i].insertAdjacentElement("afterend", title);                            // Append the text to <li>
-        //images[i].appendChild(title);  */
-        // `element` is the element you want to wrap
-        var parent = image.parentNode;
-        var wrapper = document.createElement('figure');
-        wrapper.classList.add("imgf");
-
-        // set the wrapper as child (instead of the element)
-        parent.replaceChild(wrapper, image);
-        // set element as child of wrapper
-        wrapper.appendChild(image);
-        wrapper.appendChild(title);
-        i=i+1;
-      }
-     }
+     
       function showImages(el) {
           var windowHeight = jQuery( window ).height();
           $(el).each(function(){
